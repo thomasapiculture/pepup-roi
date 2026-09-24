@@ -48,10 +48,10 @@ header p{font-size:.8rem;opacity:.7;margin-top:3px}
 .fl{display:flex;flex-direction:column;gap:4px}
 .lbl{font-size:.68rem;color:var(--ts)}
 .hint{font-size:.62rem;color:var(--tm);margin-top:2px;line-height:1.4}
-.sr{display:flex;align-items:center;gap:6px}
-.sr input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:var(--bords);border-radius:2px;outline:none}
-.sr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);cursor:pointer;border:2px solid white;box-shadow:0 0 0 1px var(--navy)}
-.sv{font-size:.9rem;font-weight:600;min-width:52px;text-align:right;color:var(--tp);flex-shrink:0}
+.sr{display:flex;flex-direction:column;gap:4px}
+.sr input[type=range]{width:100%;-webkit-appearance:none;height:4px;background:var(--bords);border-radius:2px;outline:none}
+.sr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--navy);cursor:pointer;border:2px solid white;box-shadow:0 0 0 1px var(--navy)}
+.sv{font-size:1rem;font-weight:700;color:var(--tp);text-align:left}
 .sv.ac{color:var(--accent)}
 select{width:100%;padding:6px 8px;border:.5px solid var(--bords);border-radius:var(--rad);background:var(--s0);font-size:.78rem;color:var(--tp);outline:none;font-family:inherit}
 .trow{display:flex;gap:6px}
@@ -343,6 +343,9 @@ function proCalc(){
   el.addEventListener('input',proCalc);
   el.addEventListener('change',proCalc);
 });
+document.getElementById('p-mortalite').addEventListener('input',function(){document.getElementById('p-mortalite-out').textContent=this.value+'%';});
+document.getElementById('p-reduction').addEventListener('input',function(){document.getElementById('p-reduction-out').textContent=this.value+'%';});
+document.getElementById('p-ruches').addEventListener('input',function(){document.getElementById('p-ruches-out').textContent=this.value;});
 
 function loisirSetMode(m){
   loisirMode=m;
@@ -424,6 +427,9 @@ function loisirCalc(){
   el.addEventListener('input',loisirCalc);
   el.addEventListener('change',loisirCalc);
 });
+document.getElementById('l-mortalite').addEventListener('input',function(){document.getElementById('l-mortalite-out').textContent=this.value+'%';});
+document.getElementById('l-reduction').addEventListener('input',function(){document.getElementById('l-reduction-out').textContent=this.value+'%';});
+document.getElementById('l-ruches').addEventListener('input',function(){document.getElementById('l-ruches-out').textContent=this.value;});
 
 proSetMode('miel');
 loisirSetMode('achat');
