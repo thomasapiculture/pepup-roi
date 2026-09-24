@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#1F3864">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#1b5e20">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,8 +14,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1F3864;--accent:#1a6fc4;
-  --accent-bg:#e8f1fb;--accent-bord:#9dc0ed;
+  --navy:#1b5e20;--accent:#2e7d32;
+  --accent-bg:#e8f5e9;--accent-bord:#a5d6a7;
   --s0:#f5f5f3;--s1:#f0efe9;--s2:#ffffff;
   --tp:#0b0b0b;--ts:#52514e;--tm:#898781;
   --bord:rgba(11,11,11,0.12);--bords:rgba(11,11,11,0.20);
@@ -24,81 +24,78 @@
   --amber:#C45911;--amber-bg:#fdf3ec;--amber-bord:#f5c49a;
   --rad:8px;
 }
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--s0);color:var(--tp);min-height:100vh;padding:1.5rem 1rem}
+html{font-size:14px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--s0);color:var(--tp);min-height:100vh;padding:0.75rem 0.5rem}
 .wrap{max-width:840px;margin:0 auto}
-header{text-align:center;margin-bottom:1.5rem;padding:1.75rem;background:var(--navy);border-radius:12px;color:white}
-header .tag{display:inline-block;background:rgba(255,255,255,0.15);font-size:.7rem;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.5px}
-header h1{font-size:1.8rem;font-weight:700}
-header p{font-size:.9rem;opacity:.7;margin-top:5px}
-.tabs{display:flex;gap:0;margin-bottom:1.5rem;border-radius:10px;overflow:hidden;border:.5px solid var(--bords)}
-.tab{flex:1;padding:12px 16px;text-align:center;background:var(--s1);color:var(--ts);font-size:.9rem;cursor:pointer;border:none;font-family:inherit;border-right:.5px solid var(--bords);transition:all .15s}
+header{text-align:center;margin-bottom:1rem;padding:1rem 0.75rem;background:var(--navy);border-radius:10px;color:white}
+header .tag{display:inline-block;background:rgba(255,255,255,0.15);font-size:.65rem;padding:2px 8px;border-radius:20px;margin-bottom:6px;letter-spacing:.5px}
+header h1{font-size:1.3rem;font-weight:700}
+header p{font-size:.8rem;opacity:.7;margin-top:3px}
+.tabs{display:flex;gap:0;margin-bottom:1rem;border-radius:8px;overflow:hidden;border:.5px solid var(--bords)}
+.tab{flex:1;padding:8px 6px;text-align:center;background:var(--s1);color:var(--ts);font-size:.75rem;cursor:pointer;border:none;font-family:inherit;border-right:.5px solid var(--bords);transition:all .15s;line-height:1.3}
 .tab:last-child{border-right:none}
 .tab.on{background:var(--navy);color:white;font-weight:600}
 .tab-pane{display:none}.tab-pane.on{display:block}
-.banner{border-radius:var(--rad);padding:.55rem 1rem;font-size:.8rem;margin-bottom:1rem}
+.banner{border-radius:var(--rad);padding:.45rem .75rem;font-size:.72rem;margin-bottom:.75rem;line-height:1.4}
 .banner.blue{background:var(--accent-bg);border:.5px solid var(--accent-bord);color:var(--accent)}
 .banner.amber{background:var(--amber-bg);border:.5px solid var(--amber-bord);color:var(--amber)}
-.card{background:var(--s2);border:.5px solid var(--bords);border-radius:12px;padding:1.2rem;margin-bottom:1rem}
-.card-title{font-size:.7rem;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:.6px;margin-bottom:1rem;padding-bottom:8px;border-bottom:.5px solid var(--bord)}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
-.fl{display:flex;flex-direction:column;gap:5px}
-.lbl{font-size:.73rem;color:var(--ts)}
-.hint{font-size:.66rem;color:var(--tm);margin-top:2px;line-height:1.4}
-.sr{display:flex;align-items:center;gap:8px}
+.card{background:var(--s2);border:.5px solid var(--bords);border-radius:10px;padding:.9rem .75rem;margin-bottom:.75rem}
+.card-title{font-size:.65rem;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.75rem;padding-bottom:6px;border-bottom:.5px solid var(--bord)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+@media(min-width:560px){.g4{grid-template-columns:repeat(4,1fr)}}
+.fl{display:flex;flex-direction:column;gap:4px}
+.lbl{font-size:.68rem;color:var(--ts)}
+.hint{font-size:.62rem;color:var(--tm);margin-top:2px;line-height:1.4}
+.sr{display:flex;align-items:center;gap:6px}
 .sr input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:var(--bords);border-radius:2px;outline:none}
-.sr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--navy);cursor:pointer;border:2px solid white;box-shadow:0 0 0 1px var(--navy)}
-.sv{font-size:1rem;font-weight:600;min-width:52px;text-align:right;color:var(--tp)}
+.sr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);cursor:pointer;border:2px solid white;box-shadow:0 0 0 1px var(--navy)}
+.sv{font-size:.9rem;font-weight:600;min-width:44px;text-align:right;color:var(--tp)}
 .sv.ac{color:var(--accent)}
-select{width:100%;padding:7px 9px;border:.5px solid var(--bords);border-radius:var(--rad);background:var(--s0);font-size:.85rem;color:var(--tp);outline:none;font-family:inherit}
-.trow{display:flex;gap:8px}
-.tbtn{flex:1;padding:9px;border-radius:var(--rad);border:1.5px solid var(--bords);background:var(--s0);color:var(--ts);font-size:.85rem;cursor:pointer;font-family:inherit;transition:all .12s}
-.tbtn.on{border-color:var(--navy);background:#e8edf6;color:var(--navy);font-weight:700}
-.kpi{background:var(--s0);border:.5px solid var(--bord);border-radius:var(--rad);padding:.8rem 1rem}
+select{width:100%;padding:6px 8px;border:.5px solid var(--bords);border-radius:var(--rad);background:var(--s0);font-size:.78rem;color:var(--tp);outline:none;font-family:inherit}
+.trow{display:flex;gap:6px}
+.tbtn{flex:1;padding:7px 4px;border-radius:var(--rad);border:1.5px solid var(--bords);background:var(--s0);color:var(--ts);font-size:.75rem;cursor:pointer;font-family:inherit;transition:all .12s;line-height:1.3}
+.tbtn.on{border-color:var(--navy);background:#e8f5e9;color:var(--navy);font-weight:700}
+.kpi{background:var(--s0);border:.5px solid var(--bord);border-radius:var(--rad);padding:.6rem .75rem}
 .kpi.green{background:var(--green-bg);border-color:var(--green-bord)}
 .kpi.orange{background:var(--orange-bg);border-color:var(--orange-bord)}
-.kpi-l{font-size:.68rem;color:var(--ts);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
-.kpi-v{font-size:1.2rem;font-weight:700;color:var(--tp)}
+.kpi-l{font-size:.6rem;color:var(--ts);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.kpi-v{font-size:1rem;font-weight:700;color:var(--tp)}
 .kpi.green .kpi-v{color:var(--green)}
 .kpi.orange .kpi-v{color:var(--orange)}
-.tbl-wrap{border-radius:12px;border:.5px solid var(--accent-bord);overflow:hidden;margin-bottom:1.25rem}
-.tbl-hdr{background:var(--accent-bg);padding:9px 14px;border-bottom:.5px solid var(--accent-bord)}
-.tbl-hdr p{font-size:12px;font-weight:500;color:var(--accent);margin:0}
-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.tbl-wrap{border-radius:10px;border:.5px solid var(--accent-bord);overflow:hidden;margin-bottom:1rem}
+.tbl-hdr{background:var(--accent-bg);padding:7px 10px;border-bottom:.5px solid var(--accent-bord)}
+.tbl-hdr p{font-size:11px;font-weight:500;color:var(--accent);margin:0}
+table{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 colgroup col:first-child{width:50%}
 colgroup col:not(:first-child){width:25%}
-thead th{background:var(--s1);padding:8px 14px;text-align:left;font-weight:500;color:var(--ts);border-bottom:.5px solid var(--bord);font-size:.72rem;text-transform:uppercase;letter-spacing:.4px}
+thead th{background:var(--s1);padding:6px 8px;text-align:left;font-weight:500;color:var(--ts);border-bottom:.5px solid var(--bord);font-size:.62rem;text-transform:uppercase;letter-spacing:.4px}
 thead th:not(:first-child){text-align:right}
 tbody tr{border-bottom:.5px solid var(--bord)}
-tbody td{padding:8px 14px}
+tbody td{padding:6px 8px;font-size:11px}
 tbody td:not(:first-child){text-align:right}
-.res{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1rem}
-.res-card{border-radius:12px;border:.5px solid var(--accent-bord);background:var(--accent-bg);padding:1rem 1.25rem}
-.res-l{font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:4px}
-.res-v{font-size:1.5rem;font-weight:700;color:var(--accent)}
-.savings-box{border-radius:var(--rad);padding:.7rem 1rem;margin-bottom:1rem;font-size:.8rem}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:.75rem}
+.res-card{border-radius:10px;border:.5px solid var(--accent-bord);background:var(--accent-bg);padding:.75rem 1rem}
+.res-l{font-size:.62rem;font-weight:600;color:var(--accent);margin-bottom:3px}
+.res-v{font-size:1.2rem;font-weight:700;color:var(--accent)}
+.savings-box{border-radius:var(--rad);padding:.5rem .75rem;margin-bottom:.75rem;font-size:.72rem}
 .savings-box.green{background:var(--green-bg);border:.5px solid var(--green-bord);color:var(--green)}
 .savings-box.orange{background:var(--orange-bg);border:.5px solid var(--orange-bord);color:var(--orange)}
-.hyp{font-size:.68rem;color:var(--tm);background:var(--s1);border-radius:var(--rad);padding:.7rem 1rem;line-height:1.6;margin-bottom:1rem}
+.hyp{font-size:.6rem;color:var(--tm);background:var(--s1);border-radius:var(--rad);padding:.6rem .75rem;line-height:1.5;margin-bottom:.75rem}
 .hyp strong{color:var(--ts)}
-footer{text-align:center;font-size:.68rem;color:var(--tm);margin-top:1.5rem}
+footer{text-align:center;font-size:.6rem;color:var(--tm);margin-top:1rem}
 footer strong{color:var(--ts)}
-.fmt-recommended{font-size:.65rem;background:var(--green-bg);color:var(--green);border-radius:4px;padding:1px 5px;margin-left:4px;font-weight:600}
-
-/* Bannière installation PWA */
-#install-banner{display:none;align-items:center;gap:10px;background:var(--navy);color:white;border-radius:var(--rad);padding:.7rem 1rem;margin-bottom:1rem;font-size:.82rem}
-#install-banner button{background:white;color:var(--navy);border:none;border-radius:6px;padding:6px 14px;font-weight:700;cursor:pointer;font-size:.82rem;white-space:nowrap}
-#install-banner .ib-close{background:transparent;color:rgba(255,255,255,.6);font-weight:400;padding:4px 8px}
+#install-banner{display:none;align-items:center;gap:8px;background:var(--navy);color:white;border-radius:var(--rad);padding:.6rem .75rem;margin-bottom:.75rem;font-size:.75rem}
+#install-banner button{background:white;color:var(--navy);border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:.75rem;white-space:nowrap}
+#install-banner .ib-close{background:transparent;color:rgba(255,255,255,.6);font-weight:400;padding:3px 6px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- Bannière installation -->
 <div id="install-banner">
-  <span style="flex:1">📲 Installer l'appli sur votre téléphone pour l'utiliser hors-ligne</span>
+  <span style="flex:1">📲 Installer Pep'up sur votre téléphone pour l'utiliser hors-ligne</span>
   <button id="install-btn">Installer</button>
   <button class="ib-close" id="install-close">✕</button>
 </div>
@@ -110,125 +107,125 @@ footer strong{color:var(--ts)}
 </header>
 
 <div class="tabs">
-  <button class="tab on" onclick="switchTab('pro')">🏭 Apiculteur Professionnel<br><small style="font-weight:400;opacity:.8">200 ruches et plus</small></button>
+  <button class="tab on" onclick="switchTab('pro')">🏭 Apiculteur Pro<br><small style="font-weight:400;opacity:.8">200 ruches et plus</small></button>
   <button class="tab" onclick="switchTab('loisir')">🏡 Apiculteur Loisir<br><small style="font-weight:400;opacity:.8">1 à 49 ruches</small></button>
 </div>
 
 <!-- PRO -->
 <div id="pane-pro" class="tab-pane on">
-<div class="banner blue">💡 <strong>Protocole :</strong> 2 doses/ruche/an · DDM 24 mois · Coût annuel = doses consommées × prix unitaire du conditionnement choisi</div>
+<div class="banner blue">💡 <strong>Protocole :</strong> 2 doses/ruche/an · DDM 24 mois · Coût annuel = doses consommées × prix unitaire</div>
 <div class="card">
   <p class="card-title">Paramètres de l'exploitation</p>
-  <div class="g2" style="margin-bottom:1rem">
+  <div class="g2" style="margin-bottom:.75rem">
     <div class="fl">
       <label class="lbl">Nombre de ruches</label>
       <div class="sr"><input type="range" id="p-ruches" min="50" max="1000" step="10" value="200"><span class="sv" id="p-ruches-out">200</span></div>
-      <p class="hint" id="p-hint-doses">→ 400 doses consommées / an</p>
+      <p class="hint" id="p-hint-doses">→ 400 doses / an</p>
     </div>
     <div class="fl">
-      <label class="lbl">Conditionnement choisi</label>
+      <label class="lbl">Conditionnement</label>
       <select id="p-format">
-        <option value="8.00|5">5 doses — 8,00 € TTC/dose</option>
-        <option value="6.90|10">10 doses — 6,90 € TTC/dose</option>
-        <option value="6.10|100">100 doses — 6,10 € TTC/dose</option>
-        <option value="5.31|500" selected>500 doses — 5,31 € TTC/dose ⭐ Recommandé</option>
+        <option value="8.00|5">5 doses — 8,00 €/dose</option>
+        <option value="6.90|10">10 doses — 6,90 €/dose</option>
+        <option value="6.10|100">100 doses — 6,10 €/dose</option>
+        <option value="5.31|500" selected>500 doses — 5,31 €/dose ⭐</option>
       </select>
       <p class="hint" id="p-hint-achat">—</p>
     </div>
   </div>
   <div class="g2">
     <div class="fl">
-      <label class="lbl">Mortalité hivernale actuelle</label>
+      <label class="lbl">Mortalité hivernale</label>
       <div class="sr"><input type="range" id="p-mortalite" min="10" max="50" step="1" value="22"><span class="sv" id="p-mortalite-out">22%</span></div>
-      <p class="hint">Moyenne nationale 2024-25 : 21,88% · seuil mini 10% (garantit un ROI positif)</p>
+      <p class="hint">Moy. nationale : 21,88%</p>
     </div>
     <div class="fl">
-      <label class="lbl">Réduction mortalité avec Pep'up</label>
+      <label class="lbl">Réduction mortalité</label>
       <div class="sr"><input type="range" id="p-reduction" min="10" max="80" step="1" value="44"><span class="sv ac" id="p-reduction-out">44%</span></div>
-      <p class="hint">Données OLIGOFEED : 44% moy. · jusqu'à 80%</p>
+      <p class="hint">Données OLIGOFEED : 44% moy.</p>
     </div>
   </div>
 </div>
 <div class="card">
   <p class="card-title">Valorisation des ruches sauvées</p>
-  <div class="trow" style="margin-bottom:12px">
+  <div class="trow" style="margin-bottom:10px">
     <button class="tbtn on" id="p-btn-miel" onclick="proSetMode('miel')">🍯 Il vend son miel</button>
     <button class="tbtn" id="p-btn-essaim" onclick="proSetMode('essaim')">🐝 Il vend un essaim</button>
   </div>
   <div id="p-mode-params"></div>
-  <div id="p-prod-wrap" style="margin-top:12px"></div>
+  <div id="p-prod-wrap" style="margin-top:10px"></div>
 </div>
 <div id="p-savings" class="savings-box green" style="display:none"></div>
-<div class="g4" style="margin-bottom:1rem" id="p-kpis"></div>
+<div class="g4" style="margin-bottom:.75rem" id="p-kpis"></div>
 <div class="tbl-wrap">
-  <div class="tbl-hdr"><p>Décomposition des coûts et gains — ROI annuel</p></div>
+  <div class="tbl-hdr"><p>Décomposition coûts & gains — ROI annuel</p></div>
   <table><colgroup><col><col><col></colgroup>
-    <thead><tr><th>Poste</th><th style="text-align:right">Sans Pep'up</th><th style="text-align:right">Avec Pep'up</th></tr></thead>
+    <thead><tr><th>Poste</th><th style="text-align:right">Sans</th><th style="text-align:right">Avec</th></tr></thead>
     <tbody id="p-tbody"></tbody>
   </table>
 </div>
 <div class="res" id="p-results"></div>
-<p class="hyp"><strong>Hypothèses pro :</strong> Reconstitution colonie = reine 15 € + varroa 15 € + fournitures 12,50 € = <strong>42,50 €/colonie</strong> · Production miel = <strong>20 kg/ruche/an</strong> · Protocole = <strong>2 doses/ruche/an</strong> · DDM 24 mois · Coût = doses consommées × prix unitaire · Miel <em>ou</em> essaim — un seul gain par ruche sauvée</p>
+<p class="hyp"><strong>Hypothèses pro :</strong> Reconstitution colonie = 42,50 €/colonie · Production = 20 kg/ruche/an · 2 doses/ruche/an · DDM 24 mois</p>
 </div>
 
 <!-- LOISIR -->
 <div id="pane-loisir" class="tab-pane">
-<div class="banner amber">🏡 <strong>Profil loisir :</strong> 1 à 49 ruches · Formats 5 et 10 doses particulièrement adaptés · DDM 24 mois</div>
+<div class="banner amber">🏡 <strong>Profil loisir :</strong> 1 à 49 ruches · Formats 5 et 10 doses recommandés · DDM 24 mois</div>
 <div class="card">
   <p class="card-title">Paramètres de l'exploitation</p>
-  <div class="g2" style="margin-bottom:1rem">
+  <div class="g2" style="margin-bottom:.75rem">
     <div class="fl">
       <label class="lbl">Nombre de ruches</label>
       <div class="sr"><input type="range" id="l-ruches" min="1" max="49" step="1" value="5"><span class="sv" id="l-ruches-out">5</span></div>
-      <p class="hint" id="l-hint-doses">→ 10 doses consommées / an</p>
+      <p class="hint" id="l-hint-doses">→ 10 doses / an</p>
     </div>
     <div class="fl">
-      <label class="lbl">Conditionnement choisi</label>
+      <label class="lbl">Conditionnement</label>
       <select id="l-format">
-        <option value="8.00|5" selected>5 doses — 8,00 € TTC/dose ⭐ Recommandé</option>
-        <option value="6.90|10">10 doses — 6,90 € TTC/dose ⭐ Recommandé</option>
-        <option value="6.10|100">100 doses — 6,10 € TTC/dose</option>
-        <option value="5.31|500">500 doses — 5,31 € TTC/dose</option>
+        <option value="8.00|5" selected>5 doses — 8,00 €/dose ⭐</option>
+        <option value="6.90|10">10 doses — 6,90 €/dose ⭐</option>
+        <option value="6.10|100">100 doses — 6,10 €/dose</option>
+        <option value="5.31|500">500 doses — 5,31 €/dose</option>
       </select>
       <p class="hint" id="l-hint-achat">—</p>
     </div>
   </div>
   <div class="g2">
     <div class="fl">
-      <label class="lbl">Mortalité hivernale actuelle</label>
+      <label class="lbl">Mortalité hivernale</label>
       <div class="sr"><input type="range" id="l-mortalite" min="10" max="50" step="1" value="22"><span class="sv" id="l-mortalite-out">22%</span></div>
-      <p class="hint">Moyenne nationale 2024-25 : 21,88% · seuil mini 10% (garantit un ROI positif)</p>
+      <p class="hint">Moy. nationale : 21,88%</p>
     </div>
     <div class="fl">
-      <label class="lbl">Réduction mortalité avec Pep'up</label>
+      <label class="lbl">Réduction mortalité</label>
       <div class="sr"><input type="range" id="l-reduction" min="10" max="80" step="1" value="44"><span class="sv ac" id="l-reduction-out">44%</span></div>
-      <p class="hint">Données OLIGOFEED : 44% moy. · jusqu'à 80%</p>
+      <p class="hint">Données OLIGOFEED : 44% moy.</p>
     </div>
   </div>
 </div>
 <div class="card">
   <p class="card-title">Coût de remplacement d'une colonie perdue</p>
-  <div class="trow" style="margin-bottom:12px">
-    <button class="tbtn on" id="l-btn-achat" onclick="loisirSetMode('achat')">🛒 Il achète un essaim (100 €)</button>
-    <button class="tbtn" id="l-btn-prod" onclick="loisirSetMode('prod')">🐝 Il fait son propre essaim (45 €)</button>
+  <div class="trow" style="margin-bottom:10px">
+    <button class="tbtn on" id="l-btn-achat" onclick="loisirSetMode('achat')">🛒 Achat essaim (100 €)</button>
+    <button class="tbtn" id="l-btn-prod" onclick="loisirSetMode('prod')">🐝 Essaim propre (45 €)</button>
   </div>
   <div id="l-mode-params"></div>
-  <div id="l-prod-wrap" style="margin-top:12px"></div>
+  <div id="l-prod-wrap" style="margin-top:10px"></div>
 </div>
 <div id="l-savings" class="savings-box green" style="display:none"></div>
-<div class="g4" style="margin-bottom:1rem" id="l-kpis"></div>
+<div class="g4" style="margin-bottom:.75rem" id="l-kpis"></div>
 <div class="tbl-wrap">
-  <div class="tbl-hdr"><p>Décomposition des coûts et gains — ROI annuel</p></div>
+  <div class="tbl-hdr"><p>Décomposition coûts & gains — ROI annuel</p></div>
   <table><colgroup><col><col><col></colgroup>
-    <thead><tr><th>Poste</th><th style="text-align:right">Sans Pep'up</th><th style="text-align:right">Avec Pep'up</th></tr></thead>
+    <thead><tr><th>Poste</th><th style="text-align:right">Sans</th><th style="text-align:right">Avec</th></tr></thead>
     <tbody id="l-tbody"></tbody>
   </table>
 </div>
 <div class="res" id="l-results"></div>
-<p class="hyp"><strong>Hypothèses loisir :</strong> Coût remplacement colonie par achat = <strong>100 €</strong> · Coût remplacement par production propre = <strong>45 €</strong> · Production miel = <strong>20 kg/ruche/an</strong> · Protocole = <strong>2 doses/ruche/an</strong> · DDM 24 mois · Coût = doses consommées × prix unitaire</p>
+<p class="hyp"><strong>Hypothèses loisir :</strong> Achat = 100 € · Propre = 45 € · Production = 20 kg/ruche/an · 2 doses/ruche/an · DDM 24 mois</p>
 </div>
 
-<footer><strong>Thomas Apiculture × OLIGOFEED</strong> — Document confidentiel, usage interne uniquement<br>Données OLIGOFEED : 2 000 ruches testées, 5 pays, 8 ans de recherche · Grille tarifaire actée contrat 22/05/2026</footer>
+<footer><strong>Thomas Apiculture × OLIGOFEED</strong> — Document confidentiel, usage interne<br>2 000 ruches testées · 5 pays · 8 ans de recherche · Contrat 22/05/2026</footer>
 </div>
 
 <script>
@@ -248,13 +245,12 @@ function doseCalc(ruches,dose,fmtSize){
   const dosesAchetees=nbFlacons*fmtSize;
   const dosesRestantes=dosesAchetees-dosesParAn;
   const coutAnnuel=dosesParAn*dose;
-  const coutParRuche=coutAnnuel/ruches;
-  return{dosesParAn,nbFlacons,dosesAchetees,dosesRestantes,coutAnnuel,coutParRuche};
+  return{dosesParAn,nbFlacons,dosesAchetees,dosesRestantes,coutAnnuel};
 }
 function proSetMode(m){
   proMode=m;
-  const on='flex:1;padding:9px;border-radius:8px;border:1.5px solid #1F3864;background:#e8edf6;color:#1F3864;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit';
-  const off='flex:1;padding:9px;border-radius:8px;border:1.5px solid rgba(11,11,11,.2);background:#f0efe9;color:#52514e;font-size:.85rem;cursor:pointer;font-family:inherit';
+  const on='flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #1b5e20;background:#e8f5e9;color:#1b5e20;font-size:.75rem;font-weight:700;cursor:pointer;font-family:inherit;line-height:1.3';
+  const off='flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid rgba(11,11,11,.2);background:#f0efe9;color:#52514e;font-size:.75rem;cursor:pointer;font-family:inherit;line-height:1.3';
   document.getElementById('p-btn-miel').style.cssText=m==='miel'?on:off;
   document.getElementById('p-btn-essaim').style.cssText=m==='essaim'?on:off;
   const p=document.getElementById('p-mode-params');
@@ -262,9 +258,9 @@ function proSetMode(m){
   if(m==='miel'){
     p.innerHTML=`<div class="fl"><label class="lbl">Prix du kg de miel (€ HT)</label><div class="sr"><input type="range" id="p-val" min="5" max="30" step="1" value="12"><span class="sv" id="p-param-out">12 €/kg</span></div><p class="hint">Production estimée : 20 kg/ruche/an</p></div>`;
   }else{
-    p.innerHTML=`<div class="fl"><label class="lbl">Valeur d'un essaim revendu (€ TTC)</label><div class="sr"><input type="range" id="p-val" min="50" max="200" step="10" value="120"><span class="sv" id="p-param-out">120 €</span></div><p class="hint">Prix marché : 80–150 € selon la race</p></div><div class="fl" style="margin-top:10px"><label class="lbl">Prix du kg de miel pour le reste du cheptel (€ HT)</label><div class="sr"><input type="range" id="p-val-miel-reste" min="5" max="30" step="1" value="12"><span class="sv" id="p-param-miel-reste-out">12 €/kg</span></div><p class="hint">Les ruches non concernées par la vente d'essaims produisent du miel</p></div>`;
+    p.innerHTML=`<div class="fl"><label class="lbl">Valeur d'un essaim revendu (€ TTC)</label><div class="sr"><input type="range" id="p-val" min="50" max="200" step="10" value="120"><span class="sv" id="p-param-out">120 €</span></div><p class="hint">Prix marché : 80–150 €</p></div><div class="fl" style="margin-top:8px"><label class="lbl">Prix kg miel — reste du cheptel (€ HT)</label><div class="sr"><input type="range" id="p-val-miel-reste" min="5" max="30" step="1" value="12"><span class="sv" id="p-param-miel-reste-out">12 €/kg</span></div></div>`;
   }
-  prodWrap.innerHTML=`<div class="fl"><label class="lbl">Gain de productivité avec Pep'up (miel produit par le reste du cheptel)</label><div class="sr"><input type="range" id="p-prod" min="10" max="49" step="1" value="30"><span class="sv ac" id="p-prod-out">+30%</span></div><p class="hint">Données OLIGOFEED : +30 à +49% · seuil mini 10% (garantit un ROI positif)</p></div>`;
+  prodWrap.innerHTML=`<div class="fl"><label class="lbl">Gain productivité Pep'up (miel)</label><div class="sr"><input type="range" id="p-prod" min="10" max="49" step="1" value="30"><span class="sv ac" id="p-prod-out">+30%</span></div><p class="hint">OLIGOFEED : +30 à +49%</p></div>`;
   document.getElementById('p-prod').addEventListener('input',()=>{document.getElementById('p-prod-out').textContent='+'+document.getElementById('p-prod').value+'%';proCalc();});
   document.getElementById('p-val').addEventListener('input',()=>{const v=+document.getElementById('p-val').value;document.getElementById('p-param-out').textContent=m==='miel'?v+' €/kg':v+' €';proCalc();});
   const vmr=document.getElementById('p-val-miel-reste');
@@ -283,11 +279,11 @@ function proCalc(){
   document.getElementById('p-mortalite-out').textContent=Math.round(mortP*100)+'%';
   document.getElementById('p-reduction-out').textContent=Math.round(redP*100)+'%';
   const{dosesParAn,nbFlacons,dosesAchetees,dosesRestantes,coutAnnuel}=doseCalc(ruches,dose,fmtSize);
-  document.getElementById('p-hint-doses').textContent='→ '+dosesParAn+' doses consommées / an';
-  document.getElementById('p-hint-achat').textContent=nbFlacons+' flacon'+(nbFlacons>1?'s':'')+' ('+dosesAchetees+' doses) pour 2 ans · '+dosesRestantes+' dose'+(dosesRestantes!==1?'s':'')+' rest. an 2';
+  document.getElementById('p-hint-doses').textContent='→ '+dosesParAn+' doses / an';
+  document.getElementById('p-hint-achat').textContent=nbFlacons+' flacon'+(nbFlacons>1?'s':'')+' ('+dosesAchetees+' doses) · '+dosesRestantes+' rest. an 2';
   const economie100=(dosesParAn*6.10)-coutAnnuel;
   const sb=document.getElementById('p-savings');
-  if(fmtSize!==100&&economie100>0){sb.style.display='block';sb.className='savings-box green';sb.innerHTML='💚 Économie vs format 100 doses : <strong>'+ef2(economie100)+' / an</strong> · '+dosesRestantes+' dose'+(dosesRestantes!==1?'s':'')+' restante'+(dosesRestantes!==1?'s':'')+' en an 2';}
+  if(fmtSize!==100&&economie100>0){sb.style.display='block';sb.className='savings-box green';sb.innerHTML='💚 Économie vs 100 doses : <strong>'+ef2(economie100)+' / an</strong>';}
   else if(fmtSize!==100&&economie100<0){sb.style.display='block';sb.className='savings-box orange';sb.innerHTML='⚠️ Ce format coûte plus cher que le format 100 doses';}
   else{sb.style.display='none';}
   const perduesSans=Math.round(ruches*mortP),perduesAvec=Math.round(ruches*mortP*(1-redP));
@@ -297,48 +293,48 @@ function proCalc(){
   let gainSans,gainAvec,lib,lib2,prodGainAvec=0;
   if(proMode==='miel'){
     gainSans=perduesSans*20*param;gainAvec=perduesAvec*20*param;
-    lib='Manque à gagner miel (ruches perdues, 20 kg/ruche)';
+    lib='Manque à gagner miel (ruches perdues)';
     const rVA=ruches-perduesAvec;prodGainAvec=rVA*20*prodP*param;
-    lib2='Gain productivité (+'+Math.round(prodP*100)+'% miel, '+rVA+' ruches survivantes)';
+    lib2='Gain productivité (+'+Math.round(prodP*100)+'%, '+rVA+' ruches)';
   }else{
     gainSans=0;gainAvec=sauvees*param;
-    lib="Essaims vendus (ruches sauvées par Pep'up, "+sauvees+' colonies)';
+    lib="Essaims vendus ("+sauvees+' colonies sauvées)';
     const vmrEl=document.getElementById('p-val-miel-reste');
     const pMR=vmrEl?+vmrEl.value:12;
     const rC=ruches-perduesSans;prodGainAvec=rC*20*prodP*pMR;
-    lib2='Gain productivité (+'+Math.round(prodP*100)+'% miel, '+rC+' ruches non concernées par la vente)';
+    lib2='Gain productivité (+'+Math.round(prodP*100)+'%, '+rC+' ruches)';
   }
   const rS=perduesSans*RECONST_PRO,rA=perduesAvec*RECONST_PRO;
   const totS=rS+gainSans,totA=rA+gainAvec+coutAnnuel-prodGainAvec;
   const gainNet=totS-totA,gainPR=gainNet/ruches;
   const roi=coutAnnuel>0?Math.round(gainNet/coutAnnuel*100):0;
-  const restTxt=dosesRestantes>0?dosesRestantes+' dose'+(dosesRestantes>1?'s':'')+' à compléter an 2':'Achat calibré ✓';
+  const restTxt=dosesRestantes>0?dosesRestantes+' dose'+(dosesRestantes>1?'s':'')+' an 2':'Calibré ✓';
   document.getElementById('p-kpis').innerHTML=[
-    {l:'Doses consommées / an',v:dosesParAn+'',cl:''},
-    {l:'Coût Pep\'up annuel',v:ef(coutAnnuel),cl:''},
-    {l:'Ruches sauvées / an',v:sauvees+'',cl:'green'},
-    {l:'Doses restantes an 2',v:dosesRestantes>0?dosesRestantes+'':'Ajusté ✓',cl:dosesRestantes===0?'green':'orange'},
+    {l:'Doses / an',v:dosesParAn+'',cl:''},
+    {l:'Coût annuel',v:ef(coutAnnuel),cl:''},
+    {l:'Ruches sauvées',v:sauvees+'',cl:'green'},
+    {l:'Doses rest. an 2',v:dosesRestantes>0?dosesRestantes+'':'Ajusté ✓',cl:dosesRestantes===0?'green':'orange'},
   ].map(c=>`<div class="kpi ${c.cl}"><p class="kpi-l">${c.l}</p><p class="kpi-v">${c.v}</p></div>`).join('');
   const rows=[
-    {l:'Ruches perdues (nb)',s1:perduesSans,s2:perduesAvec,money:false},
-    {l:'Reconstitution colonie (42,50 €)',s1:rS,s2:rA,money:true},
+    {l:'Ruches perdues',s1:perduesSans,s2:perduesAvec,money:false},
+    {l:'Reconstitution (42,50 €)',s1:rS,s2:rA,money:true},
     {l:lib,s1:gainSans,s2:gainAvec,money:true},
   ];
   if(prodGainAvec>0)rows.push({l:lib2,s1:0,s2:-prodGainAvec,money:true,isGain:true});
   rows.push(
-    {l:"Coût Pep'up ("+dosesParAn+' doses × '+ef2(dose)+')',s1:0,s2:coutAnnuel,money:true},
-    {l:'Total charges et pertes / an',s1:totS,s2:totA,money:true,bold:true},
-    {l:'Doses restantes pour an 2',s1:'—',s2:restTxt,money:false,info:true}
+    {l:"Coût Pep'up ("+dosesParAn+' × '+ef2(dose)+')',s1:0,s2:coutAnnuel,money:true},
+    {l:'Total / an',s1:totS,s2:totA,money:true,bold:true},
+    {l:'Doses rest. an 2',s1:'—',s2:restTxt,money:false,info:true}
   );
   document.getElementById('p-tbody').innerHTML=rows.map(r=>{
     const bg=r.bold?'background:var(--s1);':'';const fw=r.bold?'font-weight:600;':'';
-    const c2=r.info?'color:var(--ts);font-style:italic;font-size:12px':(r.isGain?'color:var(--green)':'color:var(--accent)');
+    const c2=r.info?'color:var(--ts);font-style:italic':(r.isGain?'color:var(--green)':'color:var(--accent)');
     const v1=r.money?(r.s1===0?'—':ef(r.s1)):r.s1;const v2=r.money?ef(r.s2):r.s2;
     return`<tr style="border-bottom:.5px solid var(--bord);${bg}"><td style="${fw}color:var(--tp)">${r.l}</td><td style="${fw}color:var(--ts);text-align:right">${v1}</td><td style="${fw}${c2};text-align:right">${v2}</td></tr>`;
   }).join('');
   document.getElementById('p-results').innerHTML=[
     {l:'Gain net / an',v:ef(gainNet)},
-    {l:'Gain net / ruche / an',v:sf(gainPR)},
+    {l:'Gain / ruche',v:sf(gainPR)},
     {l:'ROI annuel',v:roi+'%'},
   ].map(c=>`<div class="res-card"><p class="res-l">${c.l}</p><p class="res-v">${c.v}</p></div>`).join('');
 }
@@ -346,14 +342,14 @@ function proCalc(){
 
 function loisirSetMode(m){
   loisirMode=m;
-  const on='flex:1;padding:9px;border-radius:8px;border:1.5px solid #C45911;background:#fdf3ec;color:#C45911;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit';
-  const off='flex:1;padding:9px;border-radius:8px;border:1.5px solid rgba(11,11,11,.2);background:#f0efe9;color:#52514e;font-size:.85rem;cursor:pointer;font-family:inherit';
+  const on='flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #C45911;background:#fdf3ec;color:#C45911;font-size:.75rem;font-weight:700;cursor:pointer;font-family:inherit;line-height:1.3';
+  const off='flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid rgba(11,11,11,.2);background:#f0efe9;color:#52514e;font-size:.75rem;cursor:pointer;font-family:inherit;line-height:1.3';
   document.getElementById('l-btn-achat').style.cssText=m==='achat'?on:off;
   document.getElementById('l-btn-prod').style.cssText=m==='prod'?on:off;
   const p=document.getElementById('l-mode-params');
   const cout=m==='achat'?100:45;
-  p.innerHTML=`<div class="fl"><label class="lbl">Prix du kg de miel (€ HT)</label><div class="sr"><input type="range" id="l-val" min="8" max="30" step="1" value="12"><span class="sv" id="l-param-out">12 €/kg</span></div><p class="hint">Production estimée : 20 kg/ruche/an · seuil mini 8 €/kg (circuit court) · Coût remplacement colonie retenu : <strong>${cout} €</strong></p></div>`;
-  document.getElementById('l-prod-wrap').innerHTML=`<div class="fl"><label class="lbl">Gain de productivité avec Pep'up (miel produit par les ruches survivantes)</label><div class="sr"><input type="range" id="l-prod" min="10" max="49" step="1" value="30"><span class="sv ac" id="l-prod-out">+30%</span></div><p class="hint">Données OLIGOFEED : +30 à +49% · seuil mini 10% (garantit un ROI positif)</p></div>`;
+  p.innerHTML=`<div class="fl"><label class="lbl">Prix du kg de miel (€ HT)</label><div class="sr"><input type="range" id="l-val" min="8" max="30" step="1" value="12"><span class="sv" id="l-param-out">12 €/kg</span></div><p class="hint">20 kg/ruche/an · Remplacement colonie : <strong>${cout} €</strong></p></div>`;
+  document.getElementById('l-prod-wrap').innerHTML=`<div class="fl"><label class="lbl">Gain productivité Pep'up (miel)</label><div class="sr"><input type="range" id="l-prod" min="10" max="49" step="1" value="30"><span class="sv ac" id="l-prod-out">+30%</span></div><p class="hint">OLIGOFEED : +30 à +49%</p></div>`;
   document.getElementById('l-prod').addEventListener('input',()=>{document.getElementById('l-prod-out').textContent='+'+document.getElementById('l-prod').value+'%';loisirCalc();});
   document.getElementById('l-val').addEventListener('input',()=>{document.getElementById('l-param-out').textContent=+document.getElementById('l-val').value+' €/kg';loisirCalc();});
   loisirCalc();
@@ -371,11 +367,11 @@ function loisirCalc(){
   document.getElementById('l-mortalite-out').textContent=Math.round(mortP*100)+'%';
   document.getElementById('l-reduction-out').textContent=Math.round(redP*100)+'%';
   const{dosesParAn,nbFlacons,dosesAchetees,dosesRestantes,coutAnnuel}=doseCalc(ruches,dose,fmtSize);
-  document.getElementById('l-hint-doses').textContent='→ '+dosesParAn+' doses consommées / an';
-  document.getElementById('l-hint-achat').textContent=nbFlacons+' flacon'+(nbFlacons>1?'s':'')+' ('+dosesAchetees+' doses) pour 2 ans · '+dosesRestantes+' dose'+(dosesRestantes!==1?'s':'')+' rest. an 2';
+  document.getElementById('l-hint-doses').textContent='→ '+dosesParAn+' doses / an';
+  document.getElementById('l-hint-achat').textContent=nbFlacons+' flacon'+(nbFlacons>1?'s':'')+' ('+dosesAchetees+' doses) · '+dosesRestantes+' rest. an 2';
   const economie5=(dosesParAn*8.00)-coutAnnuel;
   const sb=document.getElementById('l-savings');
-  if(fmtSize!==5&&economie5>0){sb.style.display='block';sb.className='savings-box green';sb.innerHTML='💚 Économie vs format 5 doses : <strong>'+ef2(economie5)+' / an</strong> · '+dosesRestantes+' dose'+(dosesRestantes!==1?'s':'')+' restante'+(dosesRestantes!==1?'s':'')+' en an 2';}
+  if(fmtSize!==5&&economie5>0){sb.style.display='block';sb.className='savings-box green';sb.innerHTML='💚 Économie vs 5 doses : <strong>'+ef2(economie5)+' / an</strong>';}
   else{sb.style.display='none';}
   const perduesSans=Math.round(ruches*mortP),perduesAvec=Math.round(ruches*mortP*(1-redP));
   const sauvees=perduesSans-perduesAvec;
@@ -388,34 +384,34 @@ function loisirCalc(){
   const totS=rempSans+mielPerduSans,totA=rempAvec+mielPerduAvec+coutAnnuel-prodGainAvec;
   const gainNet=totS-totA,gainPR=gainNet/ruches;
   const roi=coutAnnuel>0?Math.round(gainNet/coutAnnuel*100):0;
-  const restTxt=dosesRestantes>0?dosesRestantes+' dose'+(dosesRestantes>1?'s':'')+' à utiliser an 2':'Achat calibré ✓';
+  const restTxt=dosesRestantes>0?dosesRestantes+' dose'+(dosesRestantes>1?'s':'')+' an 2':'Calibré ✓';
   document.getElementById('l-kpis').innerHTML=[
-    {l:'Doses consommées / an',v:dosesParAn+'',cl:''},
-    {l:'Coût Pep\'up annuel',v:ef(coutAnnuel),cl:''},
-    {l:'Ruches sauvées / an',v:sauvees+'',cl:sauvees>0?'green':''},
-    {l:'Doses restantes an 2',v:dosesRestantes>0?dosesRestantes+'':'Ajusté ✓',cl:dosesRestantes===0?'green':'orange'},
+    {l:'Doses / an',v:dosesParAn+'',cl:''},
+    {l:'Coût annuel',v:ef(coutAnnuel),cl:''},
+    {l:'Ruches sauvées',v:sauvees+'',cl:sauvees>0?'green':''},
+    {l:'Doses rest. an 2',v:dosesRestantes>0?dosesRestantes+'':'Ajusté ✓',cl:dosesRestantes===0?'green':'orange'},
   ].map(c=>`<div class="kpi ${c.cl}"><p class="kpi-l">${c.l}</p><p class="kpi-v">${c.v}</p></div>`).join('');
-  const rempLibelle=loisirMode==='achat'?'Rachat essaim (100 €/colonie)':'Reconstitution propre (45 €/colonie)';
+  const rempLibelle=loisirMode==='achat'?'Rachat essaim (100 €)':'Reconstitution (45 €)';
   const rows=[
-    {l:'Ruches perdues (nb)',s1:perduesSans,s2:perduesAvec,money:false},
+    {l:'Ruches perdues',s1:perduesSans,s2:perduesAvec,money:false},
     {l:rempLibelle,s1:rempSans,s2:rempAvec,money:true},
-    {l:'Manque à gagner miel (20 kg/ruche × '+prixMiel+' €/kg)',s1:mielPerduSans,s2:mielPerduAvec,money:true},
+    {l:'Manque miel (20 kg × '+prixMiel+' €)',s1:mielPerduSans,s2:mielPerduAvec,money:true},
   ];
-  if(prodGainAvec>0)rows.push({l:'Gain productivité (+'+Math.round(prodP*100)+'% miel, '+rVA+' ruches survivantes)',s1:0,s2:-prodGainAvec,money:true,isGain:true});
+  if(prodGainAvec>0)rows.push({l:'Gain productivité (+'+Math.round(prodP*100)+'%, '+rVA+' ruches)',s1:0,s2:-prodGainAvec,money:true,isGain:true});
   rows.push(
-    {l:"Coût Pep'up ("+dosesParAn+' doses × '+ef2(dose)+')',s1:0,s2:coutAnnuel,money:true},
-    {l:'Total charges et pertes / an',s1:totS,s2:totA,money:true,bold:true},
-    {l:'Doses restantes pour an 2',s1:'—',s2:restTxt,money:false,info:true}
+    {l:"Coût Pep'up ("+dosesParAn+' × '+ef2(dose)+')',s1:0,s2:coutAnnuel,money:true},
+    {l:'Total / an',s1:totS,s2:totA,money:true,bold:true},
+    {l:'Doses rest. an 2',s1:'—',s2:restTxt,money:false,info:true}
   );
   document.getElementById('l-tbody').innerHTML=rows.map(r=>{
     const bg=r.bold?'background:var(--s1);':'';const fw=r.bold?'font-weight:600;':'';
-    const c2=r.info?'color:var(--ts);font-style:italic;font-size:12px':(r.isGain?'color:var(--green)':'color:var(--accent)');
+    const c2=r.info?'color:var(--ts);font-style:italic':(r.isGain?'color:var(--green)':'color:var(--accent)');
     const v1=r.money?(r.s1===0?'—':ef(r.s1)):r.s1;const v2=r.money?ef(r.s2):r.s2;
     return`<tr style="border-bottom:.5px solid var(--bord);${bg}"><td style="${fw}color:var(--tp)">${r.l}</td><td style="${fw}color:var(--ts);text-align:right">${v1}</td><td style="${fw}${c2};text-align:right">${v2}</td></tr>`;
   }).join('');
   document.getElementById('l-results').innerHTML=[
     {l:'Gain net / an',v:ef(gainNet)},
-    {l:'Gain net / ruche / an',v:sf(gainPR)},
+    {l:'Gain / ruche',v:sf(gainPR)},
     {l:'ROI annuel',v:roi+'%'},
   ].map(c=>`<div class="res-card"><p class="res-l">${c.l}</p><p class="res-v">${c.v}</p></div>`).join('');
 }
@@ -424,11 +420,8 @@ function loisirCalc(){
 proSetMode('miel');
 loisirSetMode('achat');
 
-/* ── PWA : Service Worker + bannière installation ── */
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 let deferredPrompt=null;
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
-}
 window.addEventListener('beforeinstallprompt',e=>{
   e.preventDefault();deferredPrompt=e;
   document.getElementById('install-banner').style.display='flex';
