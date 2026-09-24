@@ -51,7 +51,7 @@ header p{font-size:.8rem;opacity:.7;margin-top:3px}
 .sr{display:flex;align-items:center;gap:6px}
 .sr input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:var(--bords);border-radius:2px;outline:none}
 .sr input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--navy);cursor:pointer;border:2px solid white;box-shadow:0 0 0 1px var(--navy)}
-.sv{font-size:.9rem;font-weight:600;min-width:44px;text-align:right;color:var(--tp)}
+.sv{font-size:.9rem;font-weight:600;min-width:52px;text-align:right;color:var(--tp);flex-shrink:0}
 .sv.ac{color:var(--accent)}
 select{width:100%;padding:6px 8px;border:.5px solid var(--bords);border-radius:var(--rad);background:var(--s0);font-size:.78rem;color:var(--tp);outline:none;font-family:inherit}
 .trow{display:flex;gap:6px}
@@ -225,7 +225,7 @@ footer strong{color:var(--ts)}
 <p class="hyp"><strong>Hypothèses loisir :</strong> Achat = 100 € · Propre = 45 € · Production = 20 kg/ruche/an · 2 doses/ruche/an · DDM 24 mois</p>
 </div>
 
-<footer><strong>Thomas Apiculture × OLIGOFEED</strong> — Document confidentiel, usage interne<br>2 000 ruches testées · 5 pays · 8 ans de recherche · Contrat 22/05/2026</footer>
+<footer><strong>Thomas Apiculture × OLIGOFEED</strong> — Document confidentiel, usage interne<br>1 500 ruches testées · 6 pays · +10 ans de recherche · Contrat 22/05/2026</footer>
 </div>
 
 <script>
@@ -338,7 +338,11 @@ function proCalc(){
     {l:'ROI annuel',v:roi+'%'},
   ].map(c=>`<div class="res-card"><p class="res-l">${c.l}</p><p class="res-v">${c.v}</p></div>`).join('');
 }
-['p-ruches','p-format','p-mortalite','p-reduction'].forEach(id=>document.getElementById(id).addEventListener('input',proCalc));
+['p-ruches','p-format','p-mortalite','p-reduction'].forEach(id=>{
+  const el=document.getElementById(id);
+  el.addEventListener('input',proCalc);
+  el.addEventListener('change',proCalc);
+});
 
 function loisirSetMode(m){
   loisirMode=m;
@@ -415,7 +419,11 @@ function loisirCalc(){
     {l:'ROI annuel',v:roi+'%'},
   ].map(c=>`<div class="res-card"><p class="res-l">${c.l}</p><p class="res-v">${c.v}</p></div>`).join('');
 }
-['l-ruches','l-format','l-mortalite','l-reduction'].forEach(id=>document.getElementById(id).addEventListener('input',loisirCalc));
+['l-ruches','l-format','l-mortalite','l-reduction'].forEach(id=>{
+  const el=document.getElementById(id);
+  el.addEventListener('input',loisirCalc);
+  el.addEventListener('change',loisirCalc);
+});
 
 proSetMode('miel');
 loisirSetMode('achat');
